@@ -1,0 +1,16 @@
+﻿  game.c
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(55,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(56,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(62,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(62,37): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(121,25): error C2059: syntax error: ')'
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(127,33): warning C4552: '<': result of expression not used
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(127,56): error C2143: syntax error: missing ';' before ')'
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(128,37): warning C4552: '<': result of expression not used
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(128,60): error C2143: syntax error: missing ';' before ')'
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(134,47): error C2065: 'cellX': undeclared identifier
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(134,42): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(138,47): error C2065: 'cellX': undeclared identifier
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(138,42): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(146,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(149,1): fatal  error C1004: unexpected end-of-file found
