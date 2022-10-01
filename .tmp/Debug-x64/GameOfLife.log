@@ -1,16 +1,16 @@
 ﻿  game.c
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(55,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(56,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(62,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(62,37): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(121,25): error C2059: syntax error: ')'
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(127,33): warning C4552: '<': result of expression not used
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(127,56): error C2143: syntax error: missing ';' before ')'
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(128,37): warning C4552: '<': result of expression not used
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(128,60): error C2143: syntax error: missing ';' before ')'
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(134,47): error C2065: 'cellX': undeclared identifier
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(134,42): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(138,47): error C2065: 'cellX': undeclared identifier
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(138,42): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(146,1): error C2143: syntax error: missing ';' before '{'
-C:\Users\kyk17\source\repos\GameOfLife\src\game.c(149,1): fatal  error C1004: unexpected end-of-file found
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(57,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(58,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(64,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(64,37): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(133,48): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\kyk17\source\repos\GameOfLife\src\game.c(136,48): warning C4553: '==': result of expression not used; did you intend '='?
+  Generating code
+  2 of 7 functions (28.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GameOfLife.vcxproj -> C:\Users\kyk17\source\repos\GameOfLife\bin\Debug-x64\GameOfLife.exe
+  1 File(s) copied
+  1 File(s) copied
+  0 File(s) copied

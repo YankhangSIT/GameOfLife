@@ -22,6 +22,8 @@ float cellWidth, cellHeight;
 CP_Color black;
 CP_Color turqoise;
 
+int i, j;
+
 void game_init(void)
 {
     /* Set every grids' cells as 'dead' */
@@ -117,11 +119,28 @@ void game_update(void)
 
         for (int rows = 0; rows < GOL_GRID_ROWS; rows++) {
             for (int cols = 0; cols < GOL_GRID_COLS; cols++) {
-                if (gGrids[1][rows][cols] == GOL_ALIVE) {
-                    if ()
+                int sumOfLive = 0;
+                for (i = -1; i < 2; i++) { //counts rows-1 to rows + 1 
+                    for (j = -1; j < 2; j++) { // counts columns -1 to columns+1
+                        if (gGrids[gridNo][i][j] == GOL_ALIVE) {
+                            sumOfLive += 1;
+                        };
+                    }
+                }
+                sumOfLive -= gGrids[!gridNo][rows][cols]; // doesnt count itself
+
+                if (gGrids[!gridNo][rows][cols] == GOL_DEAD && sumOfLive == 3) {
+                    gGrids[gridNo][rows][cols] == GOL_ALIVE;
+                }
+                else if (gGrids[!gridNo][rows][cols] == GOL_ALIVE && (sumOfLive < 2 || sumOfLive > 3)) {
+                    gGrids[gridNo][rows][cols] == GOL_DEAD;
+                }
+                else {
+                    gGrids[gridNo][rows][cols] = gGrids[!gridNo][rows][cols];
                 }
             }
         }
+
 
         //print grids
         for (int rows = 0; rows < GOL_GRID_ROWS; rows++) {
