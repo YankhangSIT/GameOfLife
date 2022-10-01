@@ -122,7 +122,7 @@ void game_update(void)
                 int sumOfLive = 0;
                 for (i = -1; i < 2; i++) { //counts rows-1 to rows + 1 
                     for (j = -1; j < 2; j++) { // counts columns -1 to columns+1
-                        if (gGrids[gridNo][i][j] == GOL_ALIVE) {
+                        if (gGrids[gridNo][rows + i][cols + j] == GOL_ALIVE) {
                             sumOfLive += 1;
                         };
                     }
@@ -156,8 +156,11 @@ void game_update(void)
                     CP_Settings_Fill(turqoise);
                     CP_Graphics_DrawRect(cellX, cellY, cellWidth, cellHeight);
                 }
+                gGrids[!gridNo][rows][cols] = gGrids[gridNo][rows][cols];
             }
         }
+
+
     }
 }
 
