@@ -23,6 +23,7 @@ CP_Color black;
 CP_Color turqoise;
 
 int i, j;
+int gridNo;
 
 void game_init(void)
 {
@@ -70,6 +71,8 @@ void game_init(void)
 
 void game_update(void)
 {
+    int gridNo = CP_System_GetFrameCount() % 2;
+
     CP_Graphics_ClearBackground(CP_Color_Create(0, 0, 0, 255));
 
     if (CP_Input_KeyTriggered(KEY_ANY)) {
@@ -92,7 +95,8 @@ void game_update(void)
 
                     if ((mouseClickPos.x > cellX && mouseClickPos.x < cellX + cellWidth) &&
                         (mouseClickPos.y > cellY && mouseClickPos.y < cellY + cellHeight)) {
-                        printf("you clicked %d, %d\n", cols, rows);
+                        //gGrids[!gridNo][rows][cols] = !gGrids[gridNo][rows][cols];
+                        gGrids[gridNo][rows][cols] = !(gGrids[gridNo][rows][cols]);
                     }
                 }
             }
@@ -100,7 +104,6 @@ void game_update(void)
     }
 
     else if (gIsPaused == FALSE) {
-        int gridNo = CP_System_GetFrameCount() % 2;
 
         /*
             simulation case
@@ -122,7 +125,7 @@ void game_update(void)
                 int sumOfLive = 0;
                 for (i = -1; i < 2; i++) { //counts rows-1 to rows + 1 
                     for (j = -1; j < 2; j++) { // counts columns -1 to columns+1
-                        if (gGrids[gridNo][rows + i][cols + j] == GOL_ALIVE) {
+                        if (gGrids[!gridNo][rows + i][cols + j] == 1) {
                             sumOfLive += 1;
                         };
                     }
@@ -130,10 +133,10 @@ void game_update(void)
                 sumOfLive -= gGrids[!gridNo][rows][cols]; // doesnt count itself
 
                 if (gGrids[!gridNo][rows][cols] == GOL_DEAD && sumOfLive == 3) {
-                    gGrids[gridNo][rows][cols] == GOL_ALIVE;
+                    gGrids[gridNo][rows][cols] = GOL_ALIVE;
                 }
                 else if (gGrids[!gridNo][rows][cols] == GOL_ALIVE && (sumOfLive < 2 || sumOfLive > 3)) {
-                    gGrids[gridNo][rows][cols] == GOL_DEAD;
+                    gGrids[gridNo][rows][cols] = GOL_DEAD;
                 }
                 else {
                     gGrids[gridNo][rows][cols] = gGrids[!gridNo][rows][cols];
@@ -141,26 +144,25 @@ void game_update(void)
             }
         }
 
+        
+    }
 
-        //print grids
-        for (int rows = 0; rows < GOL_GRID_ROWS; rows++) {
-            for (int cols = 0; cols < GOL_GRID_COLS; cols++) {
-                float cellX = cellWidth * cols;
-                float cellY = cellHeight * rows;
+    //print grids
+    for (int rows = 0; rows < GOL_GRID_ROWS; rows++) {
+        for (int cols = 0; cols < GOL_GRID_COLS; cols++) {
+            float cellX = cellWidth * cols;
+            float cellY = cellHeight * rows;
 
-                if (gGrids[gridNo][rows][cols] == GOL_ALIVE) {
-                    CP_Settings_Fill(black);
-                    CP_Graphics_DrawRect(cellX, cellY, cellWidth, cellHeight);
-                }
-                else {
-                    CP_Settings_Fill(turqoise);
-                    CP_Graphics_DrawRect(cellX, cellY, cellWidth, cellHeight);
-                }
-                gGrids[!gridNo][rows][cols] = gGrids[gridNo][rows][cols];
+            if (gGrids[gridNo][rows][cols] == GOL_ALIVE) {
+                CP_Settings_Fill(black);
+                CP_Graphics_DrawRect(cellX, cellY, cellWidth, cellHeight);
             }
+            else {
+                CP_Settings_Fill(turqoise);
+                CP_Graphics_DrawRect(cellX, cellY, cellWidth, cellHeight);
+            }
+            gGrids[!gridNo][rows][cols] = gGrids[gridNo][rows][cols];
         }
-
-
     }
 }
 
